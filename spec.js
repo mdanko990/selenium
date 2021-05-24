@@ -1,35 +1,35 @@
-module.exports = {
-  get: (string) => {
+class epamPage{
+  get(string){
     return browser.get(string);
-  },
-  getCurrentUrl: () => {
+  }
+  getCurrentUrl(){
     return browser.getCurrentUrl();
-  },
-  getLanguageBtn: () => {
+  }
+  getLanguageBtn(){
     return element(by.class('location-selector__button'));
-  },
-  getLanguagePanel: () => {
+  }
+  getLanguagePanel(){
     return element(by.class('location-selector__panel'));
-  },
-  getContactBtn: () => {
+  }
+  getContactBtn(){
     return element(by.class('cta-button-ui cta-button--envelope header__control'));
-  },
-  get7Language: () => {
+  }
+  get7Language(){
     return element.all(by.class('location-selector__link')).get(7);
-  },
-  getLogo: () => {
+  }
+  getLogo(){
     return element(by.class('header__logo-container'));
-  },
-  getFirstTab: () => {
+  }
+  getFirstTab(){
     return element.all(by.class('tabs__title')).get(1);
-  },
-  getFirstTabInfo: () => {
+  }
+  getFirstTabInfo(){
     return element.all(by.class('locations-viewer__countrye')).get(1);
-  },
-  getSearchBtn: () => {
+  }
+  getSearchBtn(){
     return element(by.class('header-search__button header__icon'));
-  },
-  getSearchPanel: () => {
+  }
+  getSearchPanel(){
     return element(by.class('header-search__panel'));
   }
 }

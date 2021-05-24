@@ -1,4 +1,4 @@
-let page = require('../spec.js');
+import epamPage from '../spec.js';
 
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised');
@@ -12,19 +12,19 @@ let expect = chai.expect;
       Then open ukrainian version of site
 */
 Given(/^open the website "([^"]*)"$/, function (string) {
-  page.get(string);  
+  epamPage.get(string);  
 });
 
 When('click on language dropdown list', function(){
-  element(by.buttonText('Global (EN)')).click();
+  epamPage.getLanguageBtn().click();
   return 'language button was clicked';
 });
 
 Then('open dropdown list', function () {
-  element.all(by.class('location-selector__link')).get(7).click();
+  epamPage.get7Language().click();
   return 'Ukranian selected';
 });
 
 Then('open ukrainian version of site', function(){
-  expect(page.getCurrentUrl()==='https://careers.epam.ua/');
+  expect(epamPage.getCurrentUrl()==='https://careers.epam.ua/');
 });

@@ -1,4 +1,5 @@
-let page = require('../spec.js');
+import epamPage from '../spec.js';
+
 
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised');
@@ -11,14 +12,14 @@ let expect = chai.expect;
       Then open main page
 */
 Given(/^open the website "([^"]*)"$/, function (string) {  
-  page.get(string);  
+  epamPage.get(string);  
 });
 
 When('click on logo button', function(){
-  element(by.class('header__logo-container')).click();
+  epamPage.getLogo().click();
   return 'logo clicked';
 });
 
 Then('open main page', function () {
-  expect(page.getCurrentUrl()==='https://www.epam.com');
+  expect(epamPage.getCurrentUrl()==='https://www.epam.com');
 });

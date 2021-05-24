@@ -1,4 +1,4 @@
-let page = require('../spec.js');
+import epamPage from '../spec.js';
 
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised');
@@ -11,14 +11,14 @@ let expect = chai.expect;
       Then open contact page
 */
 Given(/^open the website "([^"]*)"$/, function (string) {
-  page.get(string);  
+  epamPage.get(string);  
 });
 
 When('click on "Contact us"-button', function(){
-  element(by.class('cta-button-ui cta-button--envelope header__control')).click();
+  epamPage.getContactBtn().click();
   return '"Contact us"-button was clicked';
 });
 
 Then('open contact page', function () {
-  expect(page.getCurrentUrl()==='https://www.epam.com/about/who-we-are/contact');
+  expect(epamPage.getCurrentUrl()==='https://www.epam.com/about/who-we-are/contact');
 });

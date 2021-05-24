@@ -1,4 +1,4 @@
-let page = require('../spec.js');
+import epamPage from '../spec.js';
 
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised');
@@ -11,14 +11,14 @@ let expect = chai.expect;
       Then open dropdown list
 */
 Given(/^open the website "([^"]*)"$/, function (string) {  
-  page.get(string);  
+  epamPage.get(string);
 });
 
 When('click on language dropdown list', function(){
-  element(by.class('location-selector__button')).click();
+  epamPage.getLanguageBtn().click();
   return 'language button was clicked';
 });
 
 Then('open dropdown list', function () {
-  expect(element(by.class('location-selector__panel')).isDisplayed().toBe(true));
+  expect(epamPage.getLanguagePanel().isDisplayed().toBe(true));
 });

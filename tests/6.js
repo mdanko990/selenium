@@ -1,4 +1,4 @@
-let page = require('../spec.js');
+import epamPage from '../spec.js';
 
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised');
@@ -11,14 +11,14 @@ let expect = chai.expect;
       Then open search block
 */
 Given(/^open the website "([^"]*)"$/, function (string) {  
-  page.get(string);  
+  epamPage.get(string);  
 });
 
 When('click on search icon', function(){
-  element(by.class('header-search__button header__icon')).click();
+  epamPage.getSearch().click();
   return 'search button was clicked';
 });
 
 Then('open search block', function () {
-  expect(element(by.class('header-search__panel')).isDisplayed().toBe(true));
+  expect(epamPage.getSearchPanel().isDisplayed().toBe(true));
 });
