@@ -5,20 +5,20 @@ let chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 let expect = chai.expect;
 /*
-    Scenario: Discover cases
+  Scenario: Search action
       Given open the website https://www.epam.com/
-      When click on "our work" option on navigation bar
-      Then open https://www.epam.com/our-work page
+      When click on search icon
+      Then open search block
 */
 Given(/^open the website "([^"]*)"$/, function (string) {  
   page.get(string);  
 });
 
-When('click on "our work" option on navigation bar', function(){
-  element(by.class('cta-button-ui cta-button--envelope header__control')).click();
-  return '"our work" option was choosen';
+When('click on search icon', function(){
+  element(by.class('header-search__button header__icon')).click();
+  return 'search button was clicked';
 });
 
-Then('open https://www.epam.com/our-work page', function () {
-  expect(page.getCurrentUrl()==='https://www.epam.com/our-work');
+Then('open search block', function () {
+  expect(element(by.class('header-search__panel')).isDisplayed().toBe(true));
 });

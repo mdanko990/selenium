@@ -1,3 +1,15 @@
+/*exports.config = {
+//  seleniumAddress: 'http://localhost:4444/wd/hub',
+  directConnect: true,
+  baseUrl: 'https://www.epam.com/',
+  framework: 'custom',  
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
+  specs: ['spec.js'],
+  capabilities: {
+    browserName: 'firefox'
+  }
+}*/
+
 exports.config = {
   capabilities:{
     browserName: 'firefox',
