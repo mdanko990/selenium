@@ -11,7 +11,7 @@ let expect = chai.expect;
       Then open info about choosen country
 */
 Given(/^open the website "([^"]*)"$/, function (string) {  
-  browser.get(string);  
+  page.get(string);  
 });
 
 When('find "our offices" on page and choose part of the world', function(){

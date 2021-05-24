@@ -1,3 +1,5 @@
+let page = require('../spec.js');
+
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
@@ -9,7 +11,7 @@ let expect = chai.expect;
       Then open dropdown list
 */
 Given(/^open the website "([^"]*)"$/, function (string) {  
-  browser.get(string);  
+  page.get(string);  
 });
 
 When('click on language dropdown list', function(){

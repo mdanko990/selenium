@@ -1,3 +1,5 @@
+let page = require('../spec.js');
+
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
@@ -10,7 +12,7 @@ let expect = chai.expect;
       Then open ukrainian version of site
 */
 Given(/^open the website "([^"]*)"$/, function (string) {
-  browser.get(string);  
+  page.get(string);  
 });
 
 When('click on language dropdown list', function(){
@@ -24,5 +26,5 @@ Then('open dropdown list', function () {
 });
 
 Then('open ukrainian version of site', function(){
-  expect(browser.getCurrentUrl()==='https://careers.epam.ua/');
+  expect(page.getCurrentUrl()==='https://careers.epam.ua/');
 });

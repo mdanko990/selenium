@@ -1,3 +1,5 @@
+let page = require('../spec.js');
+
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
@@ -9,7 +11,7 @@ let expect = chai.expect;
       Then open https://www.epam.com/our-work page
 */
 Given(/^open the website "([^"]*)"$/, function (string) {  
-  browser.get(string);  
+  page.get(string);  
 });
 
 When('click on "our work" option on navigation bar', function(){
@@ -18,5 +20,5 @@ When('click on "our work" option on navigation bar', function(){
 });
 
 Then('open https://www.epam.com/our-work page', function () {
-  expect(browser.getCurrentUrl()==='https://www.epam.com/our-work');
+  expect(page.getCurrentUrl()==='https://www.epam.com/our-work');
 });
